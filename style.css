@@ -5,9 +5,16 @@ html, body {
    padding: 0;
    margin: 0;
 }
-.wrapper {
+
+.page-wrapper {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
+.wrapper {
+  flex-grow: 1;
+}
+
 .brand{
   text-align: center;
   font-size: 48px;
