@@ -40,39 +40,38 @@ while ($row = mysqli_fetch_array($result)) {
 </head>
 
 <body>
-  <div class="wrapper">
-    <h1 class="brand">L'OBS</h1>
-    <header class="main-heading">
-      <nav class="navbar">
-        <ul class="navbar-nav">
-          <li class="navbar-item"><a href="index.php">HOME</a></li>
-          <li class="navbar-item"><a href="politique.php">POLITIQUE</a></li>
-          <li class="navbar-item"><a href="immobilier.php">IMMOBILIER</a></li>
-          <li class="navbar-item"><a href="administracija.php">ADMINISTRACIJA</a></li>
-        </ul>
-      </nav>
-    </header>
-    <hr>
-
-    <main class="main-content w-60">
-      <div class="category">L'OBS > <?= $category ?> </div>
-      <h1 class="article-heading"><?= $title ?></h1>
-      <?php
-      echo "<img class=\"article-img\" src='uploads/$image'";
-      ?>
-      <br>
-      <p class="short-summary"><?= $about ?></p>
-      <div class="date">Posted <?= $date ?></div>
-      <article>
-        <p><?= $content ?> </p>
-      </article>
-    </main>
+  <div class="page-wrapper">
+    <div class="wrapper">
+      <h1 class="brand">L'OBS</h1>
+      <header class="main-heading">
+        <nav class="navbar">
+          <ul class="navbar-nav">
+            <li class="navbar-item"><a href="index.php">HOME</a></li>
+            <li class="navbar-item"><a href="politique.php">POLITIQUE</a></li>
+            <li class="navbar-item"><a href="immobilier.php">IMMOBILIER</a></li>
+            <li class="navbar-item"><a href="administracija.php">ADMINISTRACIJA</a></li>
+          </ul>
+        </nav>
+      </header>
+      <hr>
+      <main class="main-content w-60">
+        <div class="category">L'OBS > <?= $category ?> </div>
+        <h1 class="article-heading"><?= $title ?></h1>
+        <?php
+        echo "<img class=\"article-img\" src='uploads/$image'";
+        ?>
+        <br>
+        <p class="short-summary"><?= $about ?></p>
+        <div class="date">Posted <?= $date ?></div>
+        <article>
+          <p><?= $content ?> </p>
+        </article>
+      </main>
+    </div>
+    <footer class="footer">
+      <p>Andrey Inti Villca Božičević, 2021. <a href="mailto:avillcabo@tvz.hr">avillcabo@tvz.hr</a></p>
+    </footer>
   </div>
-
-  <footer class="footer">
-    <p>Andrey Inti Villca Božičević, 2021. <a href="mailto:avillcabo@tvz.hr">avillcabo@tvz.hr</a></p>
-
-  </footer>
 </body>
 
 </html>

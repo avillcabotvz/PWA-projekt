@@ -34,33 +34,34 @@ function getArticles($category)
 </head>
 
 <body>
-  <div class="wrapper">
-    <h1 class="brand">L'OBS</h1>
-    <header class="main-heading">
-      <nav class="navbar">
-        <ul class="navbar-nav">
-          <li class="navbar-item"><a href="index.php">HOME</a></li>
-          <li class="navbar-item"><a href="politique.php">POLITIQUE</a></li>
-          <li class="navbar-item"><a href="immobilier.php">IMMOBILIER</a></li>
-          <li class="navbar-item"><a href="administracija.php">ADMINISTRACIJA</a></li>
-        </ul>
-    </header>
-    <hr>
-    <main class="main-content">
-      <section class="politique-section">
-        <h2 class="section-heading">POLITQUE</h2>
-        <div class="card-row">
-          <?php
-          getArticles($category = "POLITIQUE");
-          ?>
-        </div>
-      </section>
-    </main>
+  <div class="page-wrapper">
+    <div class="wrapper">
+      <h1 class="brand">L'OBS</h1>
+      <header class="main-heading">
+        <nav class="navbar">
+          <ul class="navbar-nav">
+            <li class="navbar-item"><a href="index.php">HOME</a></li>
+            <li class="navbar-item"><a href="politique.php">POLITIQUE</a></li>
+            <li class="navbar-item"><a href="immobilier.php">IMMOBILIER</a></li>
+            <li class="navbar-item"><a href="administracija.php">ADMINISTRACIJA</a></li>
+          </ul>
+      </header>
+      <hr>
+      <main class="main-content">
+        <section class="politique-section">
+          <h2 class="section-heading">POLITQUE</h2>
+          <div class="card-row">
+            <?php
+            getArticles($category = "POLITIQUE");
+            ?>
+          </div>
+        </section>
+      </main>
+    </div>
+    <footer class="footer">
+      <p>Andrey Inti Villca Božičević, 2021. <a href="mailto:avillcabo@tvz.hr">avillcabo@tvz.hr</a></p>
+    </footer>
   </div>
-  <footer class="footer">
-    <p>Andrey Inti Villca Božičević, 2021. <a href="mailto:avillcabo@tvz.hr">avillcabo@tvz.hr</a></p>
-
-  </footer>
 </body>
 
 </html>

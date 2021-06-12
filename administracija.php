@@ -1,3 +1,15 @@
+<?php 
+  session_start();
+  if($_SESSION['level']!="admin"){
+    echo "<script type='text/javascript'> document.location = 'admin-login.php'; </script>";
+  }
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,27 +24,30 @@
 </head>
 
 <body>
-  <div class="wrapper">
-    <h1 class="brand">L'OBS</h1>
-    <header class="main-heading">
-      <nav class="navbar">
-        <ul class="navbar-nav">
-          <li class="navbar-item"><a href="index.php">HOME</a></li>
-          <li class="navbar-item"><a href="politique.php">POLITIQUE</a></li>
-          <li class="navbar-item"><a href="immobilier.php">IMMOBILIER</a></li>
-          <li class="navbar-item"><a href="administracija.php">ADMINISTRACIJA</a></li>
-        </ul>
-      </nav>
-    </header>
-    <hr>
-    <main class="main-content">
-      <a href="unos.html">Unos podataka</a>
-    </main>
+  <div class="page-wrapper">
+    <div class="wrapper">
+      <h1 class="brand">L'OBS</h1>
+      <header class="main-heading">
+        <nav class="navbar">
+          <ul class="navbar-nav">
+            <li class="navbar-item"><a href="index.php">HOME</a></li>
+            <li class="navbar-item"><a href="politique.php">POLITIQUE</a></li>
+            <li class="navbar-item"><a href="immobilier.php">IMMOBILIER</a></li>
+            <li class="navbar-item"><a href="administracija.php">ADMINISTRACIJA</a></li>
+          </ul>
+        </nav>
+      </header>
+      <hr>
+      <main class="main-content w-60">
+        <a class="menu-item" href="unos.html">Unos clanaka</a>
+        <a class="menu-item" href="brisanje.php">Promjena clanaka</a>
+        <a class="menu-item" href="brisanje.php">Brisanje clanaka</a>
+      </main>
+    </div>
+    <footer class="footer">
+      <p>Andrey Inti Villca Božičević, 2021. <a href="mailto:avillcabo@tvz.hr">avillcabo@tvz.hr</a></p>
+    </footer>
   </div>
-  <footer class="footer">
-    <p>Andrey Inti Villca Božičević, 2021. <a href="mailto:avillcabo@tvz.hr">avillcabo@tvz.hr</a></p>
-
-  </footer>
 </body>
 
 </html>

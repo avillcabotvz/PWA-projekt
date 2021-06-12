@@ -30,38 +30,39 @@ function getOptions()
 </head>
 
 <body>
-  <div class="wrapper">
-    <h1 class="brand">L'OBS</h1>
-    <header class="main-heading">
-      <nav class="navbar">
-        <ul class="navbar-nav">
-          <li class="navbar-item"><a href="index.php">HOME</a></li>
-          <li class="navbar-item"><a href="politique.php">POLITIQUE</a></li>
-          <li class="navbar-item"><a href="immobilier.php">IMMOBILIER</a></li>
-          <li class="navbar-item"><a href="administracija.php">ADMINISTRACIJA</a></li>
-        </ul>
-      </nav>
-    </header>
-    <hr>
-    <main class="main-content">
-      <form action="brisi.php" method="$_GET">
-        <div class="form-row">
-          <label class="form-label" for="title">Naslov clanka</label>
-          <select name="id" class="form-input" id="id">
-            <?php getOptions() ?>
-          </select>
-        </div>
-        <div class="form-row">
-          <div class="form-column"><button type="reset" class="btn-reset form-input" value="Poništi">Poništi</button></div>
-          <div class="form-column"><button type="submit" class="btn-submit form-input" value="Prihvati">Prihvati</button></div>
-        </div>
-      </form>
-    </main>
+  <div class="page-wrapper">
+    <div class="wrapper">
+      <h1 class="brand">L'OBS</h1>
+      <header class="main-heading">
+        <nav class="navbar">
+          <ul class="navbar-nav">
+            <li class="navbar-item"><a href="index.php">HOME</a></li>
+            <li class="navbar-item"><a href="politique.php">POLITIQUE</a></li>
+            <li class="navbar-item"><a href="immobilier.php">IMMOBILIER</a></li>
+            <li class="navbar-item"><a href="administracija.php">ADMINISTRACIJA</a></li>
+          </ul>
+        </nav>
+      </header>
+      <hr>
+      <main class="main-content">
+        <form action="brisi.php" method="POST">
+          <div class="form-row">
+            <label class="form-label" for="title">Naslov clanka</label>
+            <select name="id" class="form-input" id="id">
+              <?php getOptions() ?>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-column"><button type="reset" class="btn-reset form-input" value="Poništi">Poništi</button></div>
+            <div class="form-column"><button type="submit" class="btn-submit form-input" value="Prihvati">Prihvati</button></div>
+          </div>
+        </form>
+      </main>
+    </div>
+    <footer class="footer">
+      <p>Andrey Inti Villca Božičević, 2021. <a href="mailto:avillcabo@tvz.hr">avillcabo@tvz.hr</a></p>
+    </footer>
   </div>
-  <footer class="footer">
-    <p>Andrey Inti Villca Božičević, 2021. <a href="mailto:avillcabo@tvz.hr">avillcabo@tvz.hr</a></p>
-
-  </footer>
 </body>
 
 </html>
