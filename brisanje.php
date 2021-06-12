@@ -1,4 +1,9 @@
 <?php
+session_start();
+if ($_SESSION['level'] != "admin") {
+  echo "<script type='text/javascript'> document.location = 'admin-login.php'; </script>";
+}
+
 
 function getOptions()
 {
@@ -44,8 +49,8 @@ function getOptions()
         </nav>
       </header>
       <hr>
-      <main class="main-content">
-        <form action="brisi.php" method="POST">
+      <main class="main-content w-60">
+        <form action="brisanje-skripta.php" method="POST">
           <div class="form-row">
             <label class="form-label" for="title">Naslov clanka</label>
             <select name="id" class="form-input" id="id">

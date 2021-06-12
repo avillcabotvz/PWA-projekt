@@ -1,3 +1,22 @@
+<?php
+session_start();
+if ($_SESSION['level'] != "admin") {
+  echo "<script type='text/javascript'> document.location = 'admin-login.php'; </script>";
+}
+
+function getOptions()
+{
+  $dbc = mysqli_connect("localhost", "root", "", "pwa_projekt") or die('Could not connect: ' . mysqli_connect_error());
+  $query = "SELECT * FROM clanak";
+  $result = mysqli_query($dbc, $query);
+  while ($row = mysqli_fetch_array($result)) {
+    echo "
+      <option value=\"{$row['id']}\">{$row['title']}</option>
+      ";
+  }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,9 +27,7 @@
   <title>L'OBS</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link
-    href="https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon+SC&family=Oswald&family=Roboto+Slab&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon+SC&family=Oswald&family=Roboto+Slab&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -29,8 +46,13 @@
       </header>
       <hr>
       <main class="main-content w-60">
-        <form action="unos.php" method="POST" enctype="multipart/form-data">
-
+        <form action="update-skripta.php" method="POST" enctype="multipart/form-data">
+          <div class="form-row">
+            <label class="form-label" for="id">Naslov clanka</label>
+            <select name="id" class="form-input" id="id">
+              <?php getOptions() ?>
+            </select>
+          </div>
           <div class="form-row">
             <label class="form-label" for="title">Naslov clanka</label>
             <input type="text" class="form-input" name="title" id="title">
@@ -74,8 +96,7 @@
           <div class="form-row">
             <div class="form-column"><button type="reset" class="btn-reset form-input" value="Poništi">Poništi</button>
             </div>
-            <div class="form-column"><button type="submit" class="btn-submit form-input"
-                value="Prihvati">Prihvati</button></div>
+            <div class="form-column"><button type="submit" class="btn-submit form-input" value="Prihvati">Prihvati</button></div>
           </div>
         </form>
       </main>

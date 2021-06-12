@@ -1,69 +1,94 @@
 <?php
-
-
-
-$dbc = mysqli_connect("localhost","root","", "pwa_projekt") or die('Could not connect: ' . mysqli_connect_error());
-
-$title = $_POST["title"];
-$about = $_POST["about"];
-$content = $_POST["content"];
-$category = $_POST["category"];
-$date = date("Y-m-d H:i:s");
-$arhiv = isset($_POST['arhiv']);
-
-echo $arhiv;
-
-$target_dir = "uploads/";
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-$uploadOk = 1;
-$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-
-if(isset($_POST["submit"])) {
-  $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-  if($check !== false) {
-    $uploadOk = 1;
-  } else {
-    $uploadOk = 0;
-  }
+session_start();
+if ($_SESSION['level'] != "admin") {
+  echo "<script type='text/javascript'> document.location = 'admin-login.php'; </script>";
 }
-
-
-if (file_exists($target_file)) {
-  $uploadOk = 0;
-}
-
-
-if ($_FILES["fileToUpload"]["size"] > 5000000) {
-  $uploadOk = 0;
-}
-
-
-if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-&& $imageFileType != "gif" ) {
-  $uploadOk = 0;
-}
-
-
-if ($uploadOk == 0) {
-
-} else {
-  if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-  } else {
-  }
-}
-
-$image = $_FILES["fileToUpload"]["name"];
-
-$sql = "INSERT INTO clanak (title, about, content, category, date, image, arhiv) values (?,?,?,?,?,?,?)";
-
-  $stmt = mysqli_stmt_init($dbc);
-
-  if (mysqli_stmt_prepare($stmt, $sql)) {
-    mysqli_stmt_bind_param($stmt, 'ssssssi', $title, $about, $content, $category, $date, $image, $arhiv);
-    mysqli_stmt_execute($stmt) or die('ERROR QUERYING');
-  }
-  
-  echo "<script type='text/javascript'> document.location = 'index.php'; </script>";
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L'OBS</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon+SC&family=Oswald&family=Roboto+Slab&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <div class="wrapper">
+      <h1 class="brand">L'OBS</h1>
+      <header class="main-heading">
+        <nav class="navbar">
+          <ul class="navbar-nav">
+            <li class="navbar-item"><a href="index.php">HOME</a></li>
+            <li class="navbar-item"><a href="politique.php">POLITIQUE</a></li>
+            <li class="navbar-item"><a href="immobilier.php">IMMOBILIER</a></li>
+            <li class="navbar-item"><a href="administracija.php">ADMINISTRACIJA</a></li>
+          </ul>
+        </nav>
+      </header>
+      <hr>
+      <main class="main-content w-60">
+        <form action="unos-skripta.php" method="POST" enctype="multipart/form-data">
+
+          <div class="form-row">
+            <label class="form-label" for="title">Naslov clanka</label>
+            <input type="text" class="form-input" name="title" id="title">
+            <span class="error" id="title-error"></span>
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="about">Kratki sadrzaj vijesti</label>
+            <textarea name="about" id="" cols="30" rows="10" class="form-input"></textarea>
+            <span class="error" id="about-error"></span>
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="content">Sadrzaj vijesti</label>
+            <textarea name="content" id="" cols="30" rows="10" class="form-input"></textarea>
+            <span class="error" id="content-error"></span>
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="fileToUpload">Slika</label>
+            <input type="file" class="form-input" name="fileToUpload" id="fileToUpload">
+            <span class="error" id="image-error"></span>
+          </div>
+
+          <div class="form-row">
+            <div class="form-column">
+              <label class="form-label" for="category">Kategorija</label>
+              <select name="category" class="form-input" id="category">
+                <option value="POLITIQUE">POLITIQUE</option>
+                <option value="IMMOBILIER">IMMOBILIER</option>
+              </select>
+            </div>
+
+            <div class="form-column">
+              <label class="form-label" for="arhiv">Arhiv</label>
+              <input type="checkbox" name="arhiv" id="arhiv">
+              <span class="error" id="arhiv-error"></span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-column"><button type="reset" class="btn-reset form-input" value="Poništi">Poništi</button>
+            </div>
+            <div class="form-column"><button type="submit" class="btn-submit form-input" value="Prihvati">Prihvati</button></div>
+          </div>
+        </form>
+      </main>
+    </div>
+
+    <footer class="footer">
+      <p>Andrey Inti Villca Božičević, 2021. <a href="mailto:avillcabo@tvz.hr">avillcabo@tvz.hr</a></p>
+    </footer>
+  </div>
+</body>
+
+</html>

@@ -3,12 +3,7 @@
   if($_SESSION['level']!="admin"){
     echo "<script type='text/javascript'> document.location = 'admin-login.php'; </script>";
   }
-
-
-
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,9 +34,10 @@
       </header>
       <hr>
       <main class="main-content w-60">
-        <a class="menu-item" href="unos.html">Unos clanaka</a>
-        <a class="menu-item" href="brisanje.php">Promjena clanaka</a>
+        <a class="menu-item" href="unos.php">Unos clanaka</a>
+        <a class="menu-item" href="update.php">Promjena clanaka</a>
         <a class="menu-item" href="brisanje.php">Brisanje clanaka</a>
+        <a class="menu-item" href="registracija.php">Registracija korisnika</a>
       </main>
     </div>
     <footer class="footer">
