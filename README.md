@@ -1,9 +1,7 @@
 # PWA-projekt
 
 ## Video
-<figure class="video_container">
-  <iframe src="https://www.youtube.com/watch?v=TexslAGqX8c" frameborder="0" allowfullscreen="true"> </iframe>
-</figure>
+https://www.youtube.com/watch?v=TexslAGqX8c
 
 ## Pokretanje
 Ukoliko biste voljeli sami probati pokrenuti istu slijedite navedene korake kako bi ista bila funkcionalna.
