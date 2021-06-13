@@ -44,13 +44,13 @@ if ($_SESSION['level'] != "admin") {
 
           <div class="form-row">
             <label class="form-label" for="about">Kratki sadrzaj vijesti</label>
-            <textarea name="about" id="" cols="30" rows="10" class="form-input"></textarea>
+            <textarea name="about" id="about" cols="30" rows="10" class="form-input"></textarea>
             <span class="error" id="about-error"></span>
           </div>
 
           <div class="form-row">
             <label class="form-label" for="content">Sadrzaj vijesti</label>
-            <textarea name="content" id="" cols="30" rows="10" class="form-input"></textarea>
+            <textarea name="content" id="content" cols="30" rows="10" class="form-input"></textarea>
             <span class="error" id="content-error"></span>
           </div>
 
@@ -64,9 +64,11 @@ if ($_SESSION['level'] != "admin") {
             <div class="form-column">
               <label class="form-label" for="category">Kategorija</label>
               <select name="category" class="form-input" id="category">
+                <option value="0"></option>
                 <option value="POLITIQUE">POLITIQUE</option>
                 <option value="IMMOBILIER">IMMOBILIER</option>
               </select>
+              <span class="error" id="category-error"></span>
             </div>
 
             <div class="form-column">
@@ -77,9 +79,9 @@ if ($_SESSION['level'] != "admin") {
           </div>
 
           <div class="form-row">
-            <div class="form-column"><button type="reset" class="btn-reset form-input" value="Poništi">Poništi</button>
+            <div class="form-column"><button type="reset" class="btn-reset form-input" id="reset" value="Poništi">Poništi</button>
             </div>
-            <div class="form-column"><button type="submit" class="btn-submit form-input" value="Prihvati">Prihvati</button></div>
+            <div class="form-column"><button type="submit" class="btn-submit form-input" id="submit" value="Prihvati">Prihvati</button></div>
           </div>
         </form>
       </main>
@@ -92,3 +94,4 @@ if ($_SESSION['level'] != "admin") {
 </body>
 
 </html>
+<script src="verifikacija.js"></script>

@@ -175,9 +175,13 @@ button{
   background-color: rgb(138, 138, 138);
 }
 
-.form-error{
+.form-error, .error{
   color: red;
   font-size: 20px;
+}
+
+.error-border{
+  border: solid 1px red
 }
 
 .menu-item{
