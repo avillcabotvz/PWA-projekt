@@ -1,8 +1,11 @@
 <?php
 session_start();
-if ($_SESSION['level'] != "admin") {
+if(!(isset($_SESSION['level']))){
   echo "<script type='text/javascript'> document.location = 'admin-login.php'; </script>";
-}
+  if ($_SESSION['level'] != "admin") {
+  echo "<script type='text/javascript'> document.location = 'admin-login.php'; </script>";
+}}
+
 ?>
 
 <!DOCTYPE html>

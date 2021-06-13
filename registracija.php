@@ -46,7 +46,7 @@
           
 
           <div class="form-row w-60">
-            <div class="form-column"><button type="submit" class="btn-submit form-input" name="submit" id="submit">Posalji</button></div>
+            <button type="submit" class="btn-submit form-input" name="submit" id="submit">Posalji</button>
           </div>
           <div class="form-row w-60">
             <span class="form-error"></span>

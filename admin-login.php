@@ -3,6 +3,7 @@ include 'config.php';
 session_start();
 $error = '';
 
+
 if (isset($_POST['submit'])) {
   $kime = isset($_POST['kime']) ? $_POST['kime'] : 0;
   $password = isset($_POST['password']) ? $_POST['password'] : 0;
@@ -18,7 +19,7 @@ if (isset($_POST['submit'])) {
     mysqli_stmt_execute($stmt) or die('ERROR QUERYING');
     mysqli_stmt_store_result($stmt);
   }
-  mysqli_stmt_bind_result($stmt, $dbime, $dbpass , $dbrazina);
+  mysqli_stmt_bind_result($stmt, $dbime, $dbpass, $dbrazina);
   mysqli_stmt_fetch($stmt);
 
 
@@ -84,7 +85,9 @@ if (isset($_SESSION['level'])) {
           </div>
 
           <div class="form-row w-60">
-            <div class="form-column"><button type="submit" class="btn-submit form-input" name="submit" id="submit">Posalji</button></div>
+
+            <button type="submit" class="btn-submit form-input" name="submit" id="submit">Posalji</button>
+
           </div>
           <div class="form-row w-60">
             <span class="form-error"><?= $error ?></span>
