@@ -16,7 +16,7 @@ Logini za korisnike:
 - novinovi:novinovi
 
 ## Zadani izgled
-![Pocetna](https://github.com/avillcabotvz/PWA-projekt/tree/master/zadatak/pocetna.png)
-![Clanak](https://github.com/avillcabotvz/PWA-projekt/tree/master/zadatak/clanak.png)
+![Pocetna](https://github.com/avillcabotvz/PWA-projekt/tree/master/zadatak/pocetna.png?raw=true)
+![Clanak](https://github.com/avillcabotvz/PWA-projekt/tree/master/zadatak/clanak.png?raw=true)
 
 Izvor slika na stranici: https://unsplash.com/
