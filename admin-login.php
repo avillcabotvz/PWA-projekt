@@ -10,15 +10,24 @@ if (isset($_POST['submit'])) {
 
   $hashed_password = password_hash($password, CRYPT_BLOWFISH);
 
+  $sql = "SELECT ime,lozinka,razina_dozvole FROM users WHERE ime = ?";
 
-  $query = "SELECT ime,lozinka,razina_dozvole FROM users WHERE ime = '$kime' ";
-  $result = mysqli_query($dbc, $query) or die('ERROR QUERYING');
-  if ($result->num_rows > 0) {
-    $row = mysqli_fetch_array($result);
+  $stmt = mysqli_stmt_init($dbc);
 
-    if (password_verify($password, $row['lozinka'])) {
-      $_SESSION['username'] = $row['ime'];
-      $_SESSION['level'] = $row['razina_dozvole'];
+  if (mysqli_stmt_prepare($stmt, $sql)) {
+    mysqli_stmt_bind_param($stmt, 's', $kime);
+    mysqli_stmt_execute($stmt) or die('ERROR QUERYING');
+    mysqli_stmt_store_result($stmt);
+  }
+  mysqli_stmt_bind_result($stmt, $dbime, $dbpass , $dbrazina);
+  mysqli_stmt_fetch($stmt);
+
+
+  if (mysqli_stmt_num_rows($stmt) > 0) {
+
+    if (password_verify($password, $dbpass)) {
+      $_SESSION['username'] = $dbime;
+      $_SESSION['level'] = $dbrazina;
     } else {
       $error = "Krivi password";
     }
