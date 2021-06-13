@@ -33,7 +33,7 @@
       <main class="main-content w-60">
         <h2 class="section-heading">REGISTRACIJA</h2>
 
-        <form action="" method="POST" name="registracija">
+        <form action="registracija-skripta.php" method="POST" name="registracija">
           <div class="form-row w-60">
             <label class="form-label" for="kime">Korisnicko ime</label>
             <input class="form-input" name="kime" type="text">
@@ -43,6 +43,7 @@
             <label class="form-label" for="password">Lozinka</label>
             <input class="form-input" type="password" name="password" id="password">
           </div>
+          
 
           <div class="form-row w-60">
             <div class="form-column"><button type="submit" class="btn-submit form-input" name="submit" id="submit">Posalji</button></div>

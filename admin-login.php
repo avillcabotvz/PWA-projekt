@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
       $error = "Krivi password";
     }
   } else {
-    $error = "Krivi username";
+    $error = "Krivi username <a href=\"registracija.php\">Registrirajte se</a>";
   }
 }
 

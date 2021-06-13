@@ -55,7 +55,7 @@ if(mysqli_stmt_num_rows($stmt) == 0){
       </header>
       <hr>
       <main class="main-content w-60">
-        <div class="category">L'OBS > <?= $category ?> </div>
+        <div class="category">L'OBS > <a href="<?= $category ?>.php"><?= $category ?></a>  </div>
         <h1 class="article-heading"><?= $title ?></h1>
         <?php
         echo "<img class=\"article-img\" src='uploads/$image'";
