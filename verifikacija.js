@@ -1,5 +1,3 @@
-
-
 document.getElementById("submit").onclick = function (event) {
   slanje_forme = true;
   var title = document.querySelector("#title").value;

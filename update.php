@@ -46,6 +46,7 @@ function getOptions()
       </header>
       <hr>
       <main class="main-content w-60">
+        <h2 class="section-heading">PROMJENA CLANKA</h2>
         <form action="update-skripta.php" method="POST" enctype="multipart/form-data">
           <div class="form-row">
             <label class="form-label" for="id">Naslov clanka</label>

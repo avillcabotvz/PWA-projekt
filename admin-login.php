@@ -62,6 +62,7 @@ if (isset($_SESSION['level'])) {
         </nav>
       </header>
       <hr>
+      <h2 class="section-heading">LOGIN</h2>
       <main class="main-content w-60">
         <form action="" method="POST" name="registracija">
           <div class="form-row w-60">

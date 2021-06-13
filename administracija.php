@@ -1,8 +1,8 @@
-<?php 
-  session_start();
-  if($_SESSION['level']!="admin"){
-    echo "<script type='text/javascript'> document.location = 'admin-login.php'; </script>";
-  }
+<?php
+session_start();
+if ($_SESSION['level'] != "admin") {
+  echo "<script type='text/javascript'> document.location = 'admin-login.php'; </script>";
+}
 ?>
 
 <!DOCTYPE html>
@@ -34,6 +34,8 @@
       </header>
       <hr>
       <main class="main-content w-60">
+        <h2 class="section-heading">ADMINISTRACIJA</h2>
+
         <a class="menu-item" href="unos.php">Unos clanaka</a>
         <a class="menu-item" href="update.php">Promjena clanaka</a>
         <a class="menu-item" href="brisanje.php">Brisanje clanaka</a>

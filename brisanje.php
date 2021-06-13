@@ -50,6 +50,8 @@ function getOptions()
       </header>
       <hr>
       <main class="main-content w-60">
+        <h2 class="section-heading">BRISANJE CLANKA</h2>
+
         <form action="brisanje-skripta.php" method="POST">
           <div class="form-row">
             <label class="form-label" for="title">Naslov clanka</label>

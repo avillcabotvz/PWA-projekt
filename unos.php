@@ -34,6 +34,7 @@ if ($_SESSION['level'] != "admin") {
       </header>
       <hr>
       <main class="main-content w-60">
+        <h2 class="section-heading">UNOS CLANKA</h2>
         <form action="unos-skripta.php" method="POST" enctype="multipart/form-data">
 
           <div class="form-row">
