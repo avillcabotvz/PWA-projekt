@@ -5,7 +5,7 @@ https://github.com/avillcabotvz/PWA-projekt
 https://www.youtube.com/watch?v=TexslAGqX8c
 
 ## Pokretanje
-Ukoliko biste voljeli sami probati pokrenuti istu slijedite navedene korake kako bi ista bila funkcionalna.
+Ukoliko biste voljeli sami probati pokrenuti aplikaciju slijedite navedene korake kako bi ista bila funkcionalna.
 1. Napraviti import baze i promjeniti konekciju na bazu u config fileu.
 1. Nakon postavljanja istih potrebno je podici program na server (udaljeni ili lokalni (XAMP)).
 Aplikacija bi trebala biti u potpunosti funkcionalna nakon navedenih koraka.
