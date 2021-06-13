@@ -2,7 +2,7 @@
 
 function getArticles($category)
 {
-  $dbc = mysqli_connect("localhost", "root", "", "pwa_projekt") or die('Could not connect: ' . mysqli_connect_error());
+  include 'config.php';
   $query = "SELECT * FROM clanak WHERE arhiv=0 AND category='$category'";
   $result = mysqli_query($dbc, $query);
   while ($row = mysqli_fetch_array($result)) {

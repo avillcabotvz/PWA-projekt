@@ -1,6 +1,6 @@
 <?php
 
-$dbc = mysqli_connect("localhost", "root", "", "pwa_projekt") or die('Could not connect: ' . mysqli_connect_error());
+include 'config.php';
 
 if (isset($_GET['id'])) {
   $page = intval($_GET['id']);

@@ -1,10 +1,9 @@
 <?php
+include 'config.php';
 session_start();
 $error = '';
 
 if (isset($_POST['submit'])) {
-
-  $dbc = mysqli_connect("localhost", "root", "", "pwa_projekt") or die('Could not connect: ' . mysqli_connect_error());
   $kime = isset($_POST['kime']) ? $_POST['kime'] : 0;
   $password = isset($_POST['password']) ? $_POST['password'] : 0;
 

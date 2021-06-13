@@ -5,7 +5,7 @@ if ($_SESSION['level'] != "admin") {
 }
 
 
-$dbc = mysqli_connect("localhost", "root", "", "pwa_projekt") or die('Could not connect: ' . mysqli_connect_error());
+include 'config.php';
 
 $title = $_POST["title"];
 $about = $_POST["about"];

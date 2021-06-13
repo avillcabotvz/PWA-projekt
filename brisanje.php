@@ -1,4 +1,6 @@
 <?php
+include 'config.php';
+
 session_start();
 if ($_SESSION['level'] != "admin") {
   echo "<script type='text/javascript'> document.location = 'admin-login.php'; </script>";
@@ -7,7 +9,7 @@ if ($_SESSION['level'] != "admin") {
 
 function getOptions()
 {
-  $dbc = mysqli_connect("localhost", "root", "", "pwa_projekt") or die('Could not connect: ' . mysqli_connect_error());
+  include 'config.php';
   $query = "SELECT * FROM clanak";
   $result = mysqli_query($dbc, $query);
   while ($row = mysqli_fetch_array($result)) {
